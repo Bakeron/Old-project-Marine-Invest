@@ -1,0 +1,189 @@
+// 2 pierwsze slajdy na 100% wysokości, oprócz ostatniego
+.full-height:not(.customer-comments) { height: 100vh; }
+
+.full-height {
+	// Stylowanie 1-go slajdu
+	&.marine-invest {
+		display: flex;
+		background-color: #060e1c;
+		.block {
+	    width: 20%;
+	    height: 100%;
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
+	    .logo { 
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		   	width: 100%; 
+	      height: 20%;
+	    	img {
+					height: 70%;
+					width: 70%;
+	    	}
+    	}
+	    .image { 
+	    	height: 80%; 
+	    	img {
+					height: 100%;
+					width: 90%;
+	    	}
+	    }
+	  }
+	}
+	// Stylowanie 2-go slajdu
+	&.person {
+		background-image: url("../images/home/Bartosz-Jarmolinki.png");
+		background-size: 100% 100%;
+		position: relative;
+		.signature {
+	    position: absolute;
+	    bottom: 3%;
+	    left: 6%;
+	    right: 6%;
+	    width: 40%;
+	    color: #fff;
+	    p {
+	    	display: inline;
+			  font-size: 1.1em;
+			  text-align: left;
+			}
+			img { 
+				display: block;
+		    margin-top: 50px;
+		    height: 100px; 
+		  }
+		}
+	}
+	// Stylowanie pozostałej części strony
+	&.customer-comments {
+		// Komentarze
+		.comments {
+			background-color: #fafafa;
+			padding: 60px 7%;
+			.title-comments {
+			  color: rgb(14, 25, 48);
+			  line-height: 1.2;
+			  margin-bottom: 70px;
+			  font-size: 31px;
+			  button {
+				  font-family: Montserrat-Bold;
+				  background-color: #000;
+				  font-weight: 700;
+				  font-size: 20px;
+				  color: #fff;
+			  	border-radius: 3px;
+				  width: 173px;
+				  height: 45px;
+				  opacity: .8;
+				  position: relative;
+    			top: -3px;
+			  }
+			  img {
+			  	display: block;
+			  	margin-top: 10px;
+			  }
+			}
+			.container-fluid .col-md-4 {
+  			color: rgb(14, 25, 48);
+				strong {
+					display: block;
+					font-size: 20px;
+  				padding: 20px 0;
+  				width: 70%;
+				}
+				p {
+					font-size: 20px;
+  				width: 76%;
+  				padding: 20px 0;
+				}
+			}
+		}
+		// Stopka
+		footer {
+			.up {
+				display: inline-block;
+				background-color: #05080e;
+				padding: 50px 0;
+				width: 100%;
+				.col-md-3 { text-align: center; }
+				.col-md-2 ul { 
+					list-style-type: none;
+					li a {
+						font-family: Montserrat-Regular;
+						line-height: 2.2;
+						font-size: 0.8em;
+						color: #fff;
+						cursor: pointer;
+					}
+				}
+			}
+			.down {
+				font-family: Montserrat-Regular;
+				background-color: #fff;
+				height: 50px;
+				width: 100%;
+				small {
+					padding: 15px 3%;
+					font-size: 18px;
+					&.footer-left { float: left; }
+					&.footer-right { 
+						float: right;
+						span { color: #ffd200; }
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.full-height {
+		&:nth-child(2) .signature { width: auto; }
+		&.customer-comments footer {
+			.up {
+				padding-top: 30px;
+				.col-sm-12 img {
+					width: 180px;
+					margin-bottom: 20px;
+				}
+				.col-md-2 ul li a { font-size: .6em; }
+			}
+			.down small { font-size: .5em; }
+		}
+	}
+}
+@media screen and (max-width: 1000px) {
+	section.person, section.marine-invest { max-height: 500px; }
+}
+@media screen and (max-width: 768px) {
+	.full-height {
+		&.customer-comments {
+			text-align: center;
+			.title-comments img { margin: 10px auto; }
+			.col-md-4 {
+				strong, p { width: 100% !important; }
+			}
+			footer .down small {
+		    float: none !important;
+		    display: block;
+		    padding: 5px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 450px) {
+	section.person, section.marine-invest { max-height: 400px; }
+	.full-height.person .signature p { font-size: .7em; }
+}
+@media screen and (max-width: 300px) {
+	.full-height.person .signature p { font-size: .6em; }
+	.full-height.customer-comments .comments .col-md-4 img { 
+		width: 80%;
+		&[alt="TB Marine Shipmanagement"] { 
+			width: 215px;
+			margin-left: -30px;
+		}
+	}
+}

@@ -1,0 +1,313 @@
+// Stylowanie zakładki about-us
+// Górne menu
+nav.navbar-default {
+	padding: 20px 0;
+	background-color: #fff;
+	border: none;
+	.navbar-header {
+		width: 25%;
+		.navbar-brand {
+			height: 100%;
+			width: 100%;
+			img {
+			  width: 233px;
+			  height: 129px;
+			  margin: 0 auto;
+			}
+		}
+	}
+	.navbar-collapse {
+		padding: 0 0 0 25%;
+		ul {
+			padding-top: 35px;
+			width: 100%;
+			li {
+				width: 20%;
+				text-align: center;
+				transition: opacity .5s;
+				&:hover { opacity: .3; } 
+				a {
+					font-family: Montserrat-Bold;
+					font-size: 30px;
+					line-height: 1.2;
+  				font-weight: 700;
+					color: #000 !important;
+				}
+			}
+		}
+	}
+}
+
+// Pierwszy główny obrazek
+.ship {
+	position: relative;
+	&:before {
+		@extend .pseudo;
+		content: "ABOUT US";
+		bottom: -29px;
+		left: 10%;
+		font-family: Montserrat-Bold;
+	  font-size: 6em;
+	  color: #fff;
+	  line-height: 1.2;
+	}
+	img { 
+		width: 100%;
+		&.background {
+			position: absolute;
+	    top: 0;
+	    left: 0;
+	    opacity: .1;
+		}
+	}
+}
+
+// Opis MARINE INVEST GROUP
+article { 
+	padding: 50px 10%;
+	p { 
+		font-size: 38px;
+		color: rgb(63, 63, 63);
+		strong { font-family: Montserrat-SemiBold; }
+	}
+}
+
+// poziome linie
+hr { width: 80%; }
+
+// Historia MARINE INVEST GROUP, obrazki z opisem
+section.history {
+	padding: 50px 10% 30px;
+	overflow: hidden;
+	p {
+  	font-size: 31px;
+  	color: rgb(14, 25, 48);
+		img  {
+			display: block;
+			margin-top: 10px;
+		}
+	}
+	ul {
+		li {
+	    display: inline-block;
+	    width: calc(100%/3 - 20px);
+	    float: left;
+	    margin: 20px 10px 140px;
+	    div {
+	    	position: relative;
+	    	background-size: 100% 100%;
+		    width: 100%;
+		    height: 225px;
+		    &:before {
+		    	@extend .pseudo;
+					bottom: -15px;
+					font-family: Montserrat-Bold;
+				  font-size: 63px;
+				  color: #fff;
+				  line-height: 1.2;
+		    }
+		    &:after {
+		    	@extend .pseudo;
+					background-size: 100% !important;
+					bottom: 0;
+					right: 0;
+			    height: 45px;
+			    width: 170px;
+		    }
+	    }
+	    small {
+    		display: inline-block;
+	    	width: 95%;
+	    	margin-top: 20px;
+	    }
+			&#history-2007 {
+				div { background-image: url("../images/about-us/2007.png");
+					&:before { content: "2007"; }
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2009 {
+				div { background-image: url("../images/about-us/2009.png");	
+					&:before { content: "2009"; }
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2011 {
+				div { 
+					background-image: url("../images/about-us/2011.png");
+					&:before { content: "2011"; }
+					&:after { 
+						background: rgba(237,230,223,0.8) url("../images/about-us/RAE.png") no-repeat; 
+				    height: 53px;
+				    width: 135px;
+					}
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2012 {
+				div { background-image: url("../images/about-us/2012.png");	
+					&:before { content: "2012"; }
+				}
+			}
+			&#history-2013 {
+				div { background-image: url("../images/about-us/2013.png");	
+					&:before { content: "2013"; }
+					&:after { 
+						background: rgba(237,230,223,0.8) url("../images/about-us/RKI.gif") no-repeat;
+						height: 45px;
+			    	width: 170px; 
+					}
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2014 {
+				div { background-image: url("../images/about-us/2014.png");	
+					&:before { content: "2014"; }
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2015 {
+				div { background-image: url("../images/about-us/2015.png");	
+					&:before { content: "2015"; }
+				}
+				&:hover div { background-image: url("../images/about-us/200x.png"); }
+			}
+			&#history-2016 {
+				div { background-image: url("../images/about-us/2016.png");	
+					&:before { content: "2016"; }
+				}
+			}
+			&#history-2017 {
+				div { background-image: url("../images/about-us/2017.png");	
+					&:before { content: "2017"; }
+				}
+				&:hover div { background-image: url("../images/about-us/2017x.png"); background-color: #f1f1f1;}
+			}
+		}
+	}
+}
+// Drobne zmiany pozostałej części strony about-us (główna część w pliku home.scss)
+.customer-comments.page-about-us {
+	.comments { 
+		background-color: #fff; 
+		padding: 50px 10%;
+	}
+	footer .up ul li:first-of-type a {
+		font-size: .9em;
+		strong {
+			font-family: Montserrat-Regular;
+			.dark-blue { color: #1f3c5c; }
+			.red { color: #cd2b18; }
+			.blue { color: #1a487c; }
+			.green { color: #28682e; }
+		}
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	nav.navbar-default .navbar-collapse ul li a {
+		font-size: 25px;
+	}
+	section.history ul li {
+		div:before {
+    	bottom: -11px;
+    	font-size: 45px;
+		}
+		&#history-2011 div:after {
+	    width: 85px;
+    	height: 35px;
+	  }
+		&#history-2013 div:after {
+	    width: 120px;
+	    height: 35px;
+	  }
+	}
+}
+@media screen and (max-width: 1300px) {
+	nav.navbar-default {
+		.navbar-header .navbar-brand img {
+			width: 190px;
+    	height: 100px;
+		}
+		.navbar-collapse ul li a {
+			font-size: 20px;
+		}
+	}
+	section.history ul li div {
+    height: 165px;
+		&:before {
+	    bottom: -9px;
+	    font-size: 35px;
+		}
+	}
+}
+@media screen and (max-width: 1050px) {
+	nav.navbar-default {
+		.navbar-header .navbar-brand img {
+			width: 165px;
+    	height: 80px;
+		}
+		.navbar-collapse ul li a { font-size: 15px; }
+	}
+	section.history ul li {
+		&#history-2011 div:after {
+			width: 65px;
+			height: 28px;
+		}
+		&#history-2013 div:after {
+	    width: 85px;
+	    height: 25px;
+		}
+		small { font-size: 13px; }
+	}
+}
+@media screen and (max-width: 900px) {
+	nav.navbar-default .navbar-collapse ul li a { font-size: 13px; }
+}
+@media screen and (max-width: 768px) {
+	nav.navbar-default {
+    margin-bottom: 0;
+    padding-bottom: 0;
+		.navbar-toggle {
+			position: absolute;
+    	right: 0;
+    }
+		.navbar-header {
+	    margin: 0;
+			width: 100%;
+		}
+		.navbar-collapse {
+			padding-left: 0;
+			ul {
+				margin: 0;
+				padding: 0;
+				li { width: 100%; }
+		  }
+		}
+	}
+	.ship:before {
+    bottom: -8px;
+    font-size: 1.7em;
+	}
+	article {
+    padding: 20px 10% 0;
+		p { font-size: 25px; }
+  }
+  section.history {
+    padding: 0 10% 0;
+  	ul li {
+	  	width: 100%;
+	    margin-bottom: 95px;
+		}
+	}
+	.customer-comments.page-about-us .comments {
+    padding: 0px 10%;
+	}
+}
+@media screen and (max-width: 400px) {
+	 section.history ul li {
+    margin-bottom: 125px;
+		div { height: 125px; }
+	}
+	nav.navbar-default .navbar-toggle { top: 0; }
+}
